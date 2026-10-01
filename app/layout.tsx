@@ -5,33 +5,46 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0b3a6b', // change to your brand color
+}
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://jhseacargo.com'
+const siteName = 'JH Sea Cargo'
+const ogImage = '/images/jh-cargo-og.jpeg' // 1200x630
+
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jhseacargo.com'),
-  applicationName: 'JH Sea Cargo',
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
   title: {
-    default: 'JH Sea Cargo | China to Dubai Sea Freight & Logistics',
+    default: 'China to Dubai Sea Cargo & Freight Forwarding | JH Sea Cargo',
     template: '%s | JH Sea Cargo',
   },
   description:
-    'JH Sea Cargo offers China to Dubai sea freight, cargo consolidation, freight forwarding, JAFZA warehousing, and final-mile delivery services in Dubai and the UAE.',
+    'Ship from China to Dubai with JH Sea Cargo. Sea freight, LCL/FCL consolidation, customs clearance, JAFZA warehousing and door-to-door delivery across the UAE. Get a free quote today.',
   keywords: [
     'China to Dubai sea cargo',
     'China to Dubai shipping',
     'China to Dubai freight forwarding',
     'sea cargo from China to Dubai',
-    'Freight forwarder Dubai',
+    'freight forwarder Dubai',
     'JAFZA warehousing Dubai',
-    'cargo services Dubai',
+    'cargo consolidation China',
+    'LCL shipping China to UAE',
+    'FCL shipping China to Dubai',
     'sea freight Dubai',
     'China to UAE logistics',
     'cargo delivery Dubai',
-    'China Dubai logistics',
     'Dubai logistics company',
   ],
-  authors: [{ name: 'JH Sea Cargo' }],
-  creator: 'JH Sea Cargo',
-  publisher: 'JH Sea Cargo',
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
   category: 'Logistics and Freight Forwarding',
+  formatDetection: { email: false, address: false, telephone: false },
   robots: {
     index: true,
     follow: true,
@@ -45,43 +58,40 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
-    languages: {
-      'en-AE': '/',
-    },
+    languages: { 'en-AE': '/', 'x-default': '/' },
   },
   openGraph: {
-    title: 'JH Sea Cargo | China to Dubai Sea Freight & Logistics',
+    title: 'China to Dubai Sea Cargo & Freight Forwarding | JH Sea Cargo',
     description:
-      'Reliable China to Dubai sea cargo, freight forwarding, JAFZA warehousing, and delivery services across Dubai and the UAE.',
+      'Reliable sea freight from China to Dubai: consolidation, customs clearance, JAFZA warehousing and final-mile delivery. Request a free quote.',
     url: '/',
-    siteName: 'JH Sea Cargo',
+    siteName,
     locale: 'en_AE',
     type: 'website',
     images: [
       {
-        url: '/images/jh-cargo-hero.png',
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: 'JH Sea Cargo logistics and cargo shipping services',
+        alt: 'JH Sea Cargo - China to Dubai sea cargo and freight forwarding',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JH Sea Cargo | China to Dubai Sea Freight & Logistics',
+    title: 'China to Dubai Sea Cargo & Freight Forwarding | JH Sea Cargo',
     description:
-      'Cargo consolidation, sea freight, warehousing and final-mile delivery from China to Dubai.',
-    images: ['/images/jh-cargo-hero.png'],
+      'Sea freight, consolidation, warehousing and delivery from China to Dubai. Free quote.',
+    images: [ogImage], // same image as Open Graph
   },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  // verification: { google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE' },
 }
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
 
 export default function RootLayout({
   children,
