@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -9,6 +10,15 @@ import {
   SectionIntro,
   Values,
 } from "@/components/site";
+
+export const metadata: Metadata = {
+  title: 'About JH Sea Cargo',
+  description:
+    'Learn about JH Sea Cargo, a Dubai logistics company providing China to Dubai sea freight, consolidation, warehousing, and final-mile delivery.',
+  alternates: {
+    canonical: '/about',
+  },
+}
 
 export default function AboutPage() {
   return (
