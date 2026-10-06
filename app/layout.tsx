@@ -92,6 +92,28 @@ export const metadata: Metadata = {
   // verification: { google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE' },
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/images/jh-cargo-og.jpeg`,
+  description:
+    "Dubai-based sea cargo and freight forwarding for shipments from China to the UAE, including consolidation, warehousing and delivery.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  areaServed: ["Dubai", "United Arab Emirates", "China"],
+  knowsAbout: [
+    "Sea freight",
+    "Cargo consolidation",
+    "Freight forwarding",
+    "JAFZA warehousing",
+  ],
+}
+
 
 export default function RootLayout({
   children,
@@ -101,6 +123,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {children}
       </body>
     </html>

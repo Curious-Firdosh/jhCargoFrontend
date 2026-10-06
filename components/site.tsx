@@ -32,32 +32,28 @@ const serviceItems = [
     icon: Package,
     title: "Cargo Consolidation",
     text: "Multiple shipments are consolidated into efficient container movements, helping businesses optimize shipping costs from China to Dubai.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/service-T7RvG9UjjOQROmTjqfsA3eocwgpWkp.jpeg",
+    image: "/images/journey-operations.jpg",
     alt: "Warehouse team loading cartons into a shipping container",
   },
   {
     icon: Ship,
     title: "Sea Freight & Forwarding",
     text: "Tailored LCL and FCL sea freight solutions, coordinating the logistics process from origin to destination.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sea-iXkHFmqjyQeOFItISt1JnxSWKWN90o.jpeg",
+    image: "/images/jh-cargo-hero.png",
     alt: "Container ship beside cranes at a busy port",
   },
   {
     icon: Warehouse,
     title: "JAFZA Warehousing",
     text: "Secure, flexible and accessible short-term or long-term storage for cargo arriving from China.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jafja%20warehoauoing-CFnqeSZcetFpKHvdbcSCVD5eA9OkAj.jpeg",
+    image: "/images/contact-operation.jpg",
     alt: "Large modern warehouse filled with organized cargo",
   },
   {
     icon: Truck,
     title: "Dubai Last-Mile Delivery",
     text: "Efficient delivery from our JAFZA facility to locations across Dubai, safely and on time.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/home%20hero-8W2TZTAJ3hMFv8UrzvTDCa77UpvWeZ.jpeg",
+    image: "/images/home%20hero.jpeg",
     alt: "Dubai container terminal and delivery routes at sunset",
   },
 ];
@@ -399,6 +395,13 @@ export function Services() {
                   >
                     {text}
                   </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[#147da9] transition-colors group-hover:text-[#10263f]"
+                    aria-label={`Request a quote for ${title}`}
+                  >
+                    Discuss this service <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
                 </div>
               </div>
 
