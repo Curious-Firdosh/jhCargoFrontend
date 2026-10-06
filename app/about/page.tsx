@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Compass, Network, Ship, TrendingUp } from "lucide-react";
 import { Footer, Header } from "@/components/site";
+import OurJourneySection from "@/components/OurJourneySection";
 
 export const metadata: Metadata = {
   title: "About JH Sea Cargo | Reliable Logistics from Dubai",
@@ -148,37 +149,9 @@ export default function AboutPage() {
           <span className="pointer-events-none absolute bottom-8 right-8 hidden text-[10px] font-bold uppercase tracking-[.3em] text-white/55 md:block">Experience · Clarity · Independence</span>
         </section>
 
-        <section className="section-pad bg-[#f5fbfd]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <div><span className="eyebrow">Our journey</span><h2 className="section-title mt-4 max-w-3xl">Every Step Shaped Who We Are</h2></div>
-              <p className="max-w-sm text-sm leading-7 text-slate-500">Experience became clarity. Clarity gave us the confidence to take responsibility for our own journey.</p>
-            </div>
-            <div className="relative">
-              <div className="absolute bottom-8 left-[23px] top-8 w-px bg-[#c9e2e9] md:left-1/2 md:-translate-x-1/2" />
-              <div className="space-y-7 md:space-y-9">
-                {milestones.map(({ number, eyebrow, title, text, icon: Icon, image, featured }, index) => (
-                  <article key={number} className={`relative grid gap-5 pl-16 md:grid-cols-2 md:gap-14 md:pl-0 ${index % 2 ? "md:[&>div:first-child]:col-start-2" : ""}`}>
-                    <div className={`absolute left-0 top-5 z-10 grid size-12 place-items-center rounded-full border-4 border-[#f5fbfd] shadow-sm md:left-1/2 md:-translate-x-1/2 ${featured ? "bg-[#10263f] text-[#a7e1f5] ring-4 ring-[#79c8e8]/20" : "bg-white text-[#2999cb]"}`}>
-                      <Icon size={18} strokeWidth={1.8} />
-                    </div>
-                    <div className={`min-w-0 rounded-2xl border p-6 md:p-8 ${featured ? "border-[#79c8e8] bg-[#10263f] text-white shadow-xl shadow-[#10263f]/15" : "border-slate-200/80 bg-white"} ${index % 2 ? "md:col-start-1 md:row-start-1 md:text-right" : "md:col-start-2"}`}>
-                      <div className={`flex items-center gap-3 ${index % 2 ? "md:justify-end" : ""}`}>
-                        <span className={`text-xs font-extrabold tracking-[.2em] ${featured ? "text-[#a7e1f5]" : "text-[#2999cb]"}`}>{number}</span>
-                        <span className={`h-px w-8 ${featured ? "bg-[#79c8e8]/60" : "bg-slate-200"}`} />
-                        <span className={`text-[10px] font-bold uppercase tracking-[.16em] ${featured ? "text-white/60" : "text-slate-400"}`}>{eyebrow}</span>
-                      </div>
-                      <h3 className={`mt-4 text-xl font-extrabold leading-tight tracking-[-.03em] md:text-2xl ${featured ? "text-white" : "text-[#10263f]"}`}>{title}</h3>
-                      <p className={`mt-3 text-sm leading-7 ${featured ? "text-white/75" : "text-slate-600"}`}>{text}</p>
-                      {image && <div className="relative mt-6 aspect-[16/8] overflow-hidden rounded-xl bg-slate-200"><Image src="/images/journey-operations.jpg" alt="Operations team coordinating cargo and logistics" fill sizes="(max-width: 768px) 100vw, 38vw" className="object-cover" /></div>}
-                    </div>
-                    <div className="hidden md:block" />
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <>
+          <OurJourneySection/>
+        </>
 
         <section className="section-pad">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
